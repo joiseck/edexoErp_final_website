@@ -25,7 +25,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookDemo }) => {
             <a href="#" className="flex items-center space-x-3 group relative py-1.5 transition-transform duration-500 hover:scale-[1.02]">
               <div className="relative">
                 <img
-                  src="Edexo Icon.png"
+                  src="/Edexo Icon.png"
                   alt="Edexo Icon"
                   className="w-10 h-10 md:w-12 md:h-12 object-contain transition-transform duration-500 group-hover:scale-110"
                 />
@@ -66,7 +66,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookDemo }) => {
         <div className="md:hidden fixed inset-0 z-[110] bg-white p-6 animate-in slide-in-from-right duration-300">
           <div className="flex justify-between items-center mb-12">
             <div className="flex items-center space-x-3">
-              <img src="Edexo Icon.png" alt="Edexo Icon" className="w-12 h-12 object-contain" />
+              <img src="/Edexo Icon.png" alt="Edexo Icon" className="w-12 h-12 object-contain" />
               <div className="flex flex-col">
                 <span className="text-2xl font-black text-blue-950 leading-[0.8]">Edexo</span>
                 <span className="text-[10px] font-extrabold text-orange-500 tracking-[0.2em] uppercase -mt-0.5">ERP</span>

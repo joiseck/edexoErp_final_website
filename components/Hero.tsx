@@ -15,7 +15,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookDemo }) => {
       <div className="max-w-7xl mx-auto px-4 relative">
         <div className="text-center max-w-4xl mx-auto mb-16 space-y-6">
           <div className="inline-flex items-center space-x-2 px-4 py-2 bg-white rounded-full shadow-sm border border-slate-100 mb-4 animate-in fade-in slide-in-from-bottom-4 duration-1000">
-            <img src="Edexo Icon.png" alt="Edexo Icon" className="w-5 h-5 object-contain" />
+            <img src="/Edexo Icon.png" alt="Edexo Icon" className="w-5 h-5 object-contain" />
             <span className="text-sm font-bold text-slate-600 uppercase tracking-wider">Born for Education, Built for Business</span>
           </div>
 

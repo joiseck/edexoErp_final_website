@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
             <div className="flex items-center space-x-4">
               <div className="relative group">
                 <img
-                  src="Edexo Icon.png"
+                  src="/Edexo Icon.png"
                   alt="Edexo Icon"
                   className="w-12 h-12 object-contain transition-transform duration-500 group-hover:rotate-12"
                 />
