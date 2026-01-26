@@ -56,18 +56,18 @@ export const ModuleGrid: React.FC = () => {
   ];
 
   return (
-    <section className="py-32 bg-slate-900 text-white overflow-hidden relative" id="modules">
+    <section className="py-24 bg-slate-900 text-white overflow-hidden relative" id="modules">
       <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-500/5 blur-[150px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 relative">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-8">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 text-orange-400 font-bold text-sm uppercase tracking-widest mb-4">
-              <div className="w-10 h-[2px] bg-orange-500"></div>
+            <div className="inline-flex items-center gap-2 text-orange-400 font-bold text-xs uppercase tracking-widest mb-3">
+              <div className="w-8 h-[2px] bg-orange-500"></div>
               A Complete Ecosystem
             </div>
-            <h2 className="text-4xl md:text-6xl font-black mb-6">Integrated Modules. <br />Seamless Growth.</h2>
-            <p className="text-slate-400 text-lg font-medium leading-relaxed">
+            <h2 className="text-3xl md:text-5xl font-black mb-4">Integrated Modules. <br />Seamless Growth.</h2>
+            <p className="text-slate-400 text-base font-medium leading-relaxed">
               Every module is engineered to solve a specific challenge. Whether you're managing a coaching center or a multi-campus university, Edexo adapts to your scale.
             </p>
           </div>
@@ -85,7 +85,7 @@ export const ModuleGrid: React.FC = () => {
               </div>
               <h3 className="text-2xl font-black mb-4 group-hover:text-blue-400 transition-colors">{m.title}</h3>
               <p className="text-slate-400 mb-8 leading-relaxed font-medium text-sm">{m.description}</p>
-              
+
               <div className="space-y-4">
                 {m.features.map((f, i) => (
                   <div key={i} className="flex items-center gap-3">

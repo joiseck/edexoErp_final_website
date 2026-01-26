@@ -8,32 +8,222 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .glass {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            scroll-behavior: smooth;
         }
+        
+        /* Enhanced Glass Effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .glass:hover {
+            background: rgba(255, 255, 255, 0.85);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Enhanced Text Gradient */
         .text-gradient {
-            background: linear-gradient(to right, #1e3a8a, #3b82f6, #f97316);
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 40%, #f97316 60%, #ef4444 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+            letter-spacing: -0.02em;
         }
+        
+        /* Enhanced Mesh Background */
         .bg-mesh {
             background-color: #f8fafc;
             background-image: 
                 radial-gradient(at 0% 0%, hsla(210,100%,96%,1) 0, transparent 50%), 
                 radial-gradient(at 50% 0%, hsla(25,100%,96%,1) 0, transparent 50%), 
-                radial-gradient(at 100% 0%, hsla(210,100%,96%,1) 0, transparent 50%);
+                radial-gradient(at 100% 0%, hsla(210,100%,96%,1) 0, transparent 50%),
+                radial-gradient(at 0% 100%, hsla(210,100%,96%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 100%, hsla(25,100%,96%,1) 0, transparent 50%);
         }
+        
+        /* Enhanced Floating Animation */
         @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(1deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        
+        @keyframes float-slow {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-10px); }
             100% { transform: translateY(0px); }
         }
+        
         .animate-float { animation: float 6s ease-in-out infinite; }
-        .glow-orange { filter: drop-shadow(0 0 15px rgba(249, 115, 22, 0.3)); }
+        .animate-float-slow { animation: float-slow 8s ease-in-out infinite; }
+        
+        /* Enhanced Glow Effects */
+        .glow-orange { 
+            filter: drop-shadow(0 0 15px rgba(249, 115, 22, 0.4)); 
+            transition: filter 0.3s ease;
+        }
+        
+        .glow-blue { 
+            filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.4)); 
+            transition: filter 0.3s ease;
+        }
+        
+        .glow-green { 
+            filter: drop-shadow(0 0 15px rgba(34, 197, 94, 0.4)); 
+            transition: filter 0.3s ease;
+        }
+        
+        /* Enhanced Button Effects */
+        .btn-hover-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-hover-effect::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        .btn-hover-effect:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        /* Enhanced Loading Animations */
+        @keyframes shimmer {
+            0% { background-position: -200px 0; }
+            100% { background-position: calc(200px + 100%) 0; }
+        }
+        
+        .shimmer {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200px 100%;
+            animation: shimmer 1.5s infinite;
+        }
+        
+        /* Enhanced Scroll Effects */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Enhanced Focus States */
+        .focus-ring {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        /* Enhanced Cursor Effects */
+        .cursor-pointer {
+            cursor: pointer;
+        }
+        
+        .cursor-pointer:hover {
+            transform: translateY(-2px);
+            transition: transform 0.2s ease;
+        }
+        
+        /* Enhanced Typography */
+        .text-display {
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            line-height: 0.9;
+        }
+        
+        .text-subtitle {
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+        
+        /* Enhanced Responsive Design */
+        @media (max-width: 768px) {
+            .text-display {
+                font-size: clamp(2rem, 8vw, 4rem);
+            }
+        }
+        
+        /* Enhanced Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        /* Enhanced Print Styles */
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white; color: black; }
+        }
+        
+        /* Enhanced Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-primary: #0f172a;
+                --bg-secondary: #1e293b;
+                --text-primary: #f1f5f9;
+                --text-secondary: #94a3b8;
+            }
+        }
+        
+        /* Enhanced Performance */
+        .will-change-transform {
+            will-change: transform;
+        }
+        
+        .will-change-opacity {
+            will-change: opacity;
+        }
+        
+        /* Enhanced SVG Filters */
+        .filter-grayscale {
+            filter: grayscale(100%);
+        }
+        
+        .filter-grayscale:hover {
+            filter: grayscale(0%);
+        }
+        
+        /* Enhanced Parallax Effects */
+        .parallax {
+            transform: translateY(0);
+            transition: transform 0.3s ease-out;
+        }
+        
+        .parallax:hover {
+            transform: translateY(-5px);
+        }
     </style>
 <script type="importmap">
 {

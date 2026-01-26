@@ -10,9 +10,9 @@ export const Stats: React.FC = () => {
   ];
 
   return (
-    <section className="relative z-20 -mt-10 px-4">
-      <div className="max-w-6xl mx-auto glass rounded-[3rem] shadow-2xl p-10 md:p-16">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
+    <section className="relative z-20 -mt-8 px-4">
+      <div className="max-w-6xl mx-auto glass rounded-[2.5rem] shadow-2xl p-8 md:p-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, idx) => (
             <div key={idx} className="text-center group">
               <div className="text-4xl md:text-5xl font-black text-blue-950 mb-2 tracking-tight group-hover:text-orange-600 transition-colors">
