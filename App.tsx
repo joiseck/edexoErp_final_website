@@ -8,7 +8,6 @@ import { IndustryFocus } from './components/IndustryFocus';
 import { AcademicFeatures } from './components/AcademicFeatures';
 import { Features } from './components/Features';
 import { AIInsights } from './components/AIInsights';
-import { Testimonials } from './components/Testimonials';
 import { Footer } from './components/Footer';
 import { BookDemoModal } from './components/BookDemoModal';
 import { Zap, MessageSquare, ArrowRight, ShieldCheck, Heart, Sparkles, Star, TrendingUp, Users, Globe } from 'lucide-react';
@@ -248,7 +247,6 @@ const App: React.FC = () => {
 
         <Features />
 
-        <Testimonials />
 
         {/* Enhanced Final CTA */}
         <section className="py-24 px-4 relative overflow-hidden">

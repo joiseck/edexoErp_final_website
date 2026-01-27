@@ -41,12 +41,7 @@ export const AcademicFeatures: React.FC = () => {
     }
   ];
 
-  const stats = [
-    { label: "Student Records", value: "100K+", icon: Users },
-    { label: "Daily Active Users", value: "50K+", icon: GraduationCap },
-    { label: "Institutions Served", value: "500+", icon: BookOpen },
-    { label: "Languages Supported", value: "10+", icon: MessageSquare }
-  ];
+
 
   return (
     <section className="py-24 bg-gradient-to-br from-slate-50 via-white to-orange-50 relative overflow-hidden" id="academic-features">
@@ -67,19 +62,6 @@ export const AcademicFeatures: React.FC = () => {
           <p className="text-lg md:text-xl text-slate-600 font-medium leading-relaxed max-w-3xl mx-auto">
             Everything your institution needs to thrive in the digital age. From smart classrooms to administrative efficiency, we've got you covered.
           </p>
-        </div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-24">
-          {stats.map((stat, index) => (
-            <div key={index} className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 text-center group hover:shadow-lg transition-all duration-300">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-orange-500 rounded-xl flex items-center justify-center text-white mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <stat.icon className="w-6 h-6" />
-              </div>
-              <div className="text-2xl font-black text-blue-950 mb-2">{stat.value}</div>
-              <div className="text-sm text-slate-500 font-medium">{stat.label}</div>
-            </div>
-          ))}
         </div>
 
         {/* Features Grid */}
