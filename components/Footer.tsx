@@ -2,7 +2,11 @@
 import React, { useState, useEffect } from 'react';
 import { GraduationCap, Facebook, Twitter, Linkedin, Mail, Phone, MapPin, Instagram, Youtube, ExternalLink, Map, Navigation, Clock, Building2, Globe, ShieldCheck, Zap, Users } from 'lucide-react';
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  onBookDemo: () => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onBookDemo }) => {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -46,29 +50,29 @@ export const Footer: React.FC = () => {
   const quickLinks = [
     {
       title: 'Core Platforms', links: [
-        { name: 'Edu-LMS Pro', desc: 'Learning Management System' },
-        { name: 'Hostel & Mess Mgmt', desc: 'Residential Management' },
-        { name: 'Smart Fee Treasury', desc: 'Financial Operations' },
-        { name: 'Growth CRM', desc: 'Customer Relationship' },
-        { name: 'Human Capital HRMS', desc: 'Human Resources' }
+        { name: 'Edu-LMS Pro', id: 'academic-features' },
+        { name: 'Hostel & Mess Mgmt', id: 'modules' },
+        { name: 'Smart Fee Treasury', id: 'modules' },
+        { name: 'Growth CRM', id: 'modules' },
+        { name: 'Human Capital HRMS', id: 'modules' }
       ]
     },
     {
       title: 'Resources', links: [
-        { name: 'Help Documentation', desc: 'User Guides & Tutorials' },
-        { name: 'API References', desc: 'Developer Documentation' },
-        { name: 'Customer Success Stories', desc: 'Real World Examples' },
-        { name: 'Security & Trust', desc: 'Compliance & Security' },
-        { name: 'Pricing Plans', desc: 'Flexible Options' }
+        { name: 'Help Documentation', action: onBookDemo },
+        { name: 'API References', action: onBookDemo },
+        { name: 'Customer Success Stories', id: 'solutions' },
+        { name: 'Security & Trust', id: 'features' },
+        { name: 'Pricing Plans', action: onBookDemo }
       ]
     },
     {
       title: 'Support', links: [
-        { name: '24/7 Support', desc: 'Round the clock assistance' },
-        { name: 'Training Programs', desc: 'Staff development' },
-        { name: 'Implementation', desc: 'Seamless setup' },
-        { name: 'Consultation', desc: 'Expert guidance' },
-        { name: 'Community Forum', desc: 'Peer support' }
+        { name: '24/7 Support', action: onBookDemo },
+        { name: 'Training Programs', action: onBookDemo },
+        { name: 'Implementation', action: onBookDemo },
+        { name: 'Consultation', action: onBookDemo },
+        { name: 'Community Forum', action: onBookDemo }
       ]
     }
   ];
@@ -99,13 +103,24 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Quick Links */}
-          {quickLinks.slice(0, 2).map((section, idx) => (
+          {quickLinks.map((section, idx) => (
             <div key={idx} className="space-y-4">
               <h4 className="text-white font-bold text-base border-b border-slate-800 pb-2">{section.title}</h4>
               <ul className="space-y-2">
-                {section.links.map((link, lIdx) => (
+                {section.links.map((link: any, lIdx) => (
                   <li key={lIdx}>
-                    <a href="#" className="text-sm hover:text-orange-400 transition-colors">{link.name}</a>
+                    <button 
+                      onClick={() => {
+                        if (link.id) {
+                          document.getElementById(link.id)?.scrollIntoView({ behavior: 'smooth' });
+                        } else if (link.action) {
+                          link.action();
+                        }
+                      }}
+                      className="text-sm hover:text-orange-400 transition-colors text-left"
+                    >
+                      {link.name}
+                    </button>
                   </li>
                 ))}
               </ul>

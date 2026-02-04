@@ -104,7 +104,10 @@ export const Hero: React.FC<HeroProps> = ({ onBookDemo }) => {
               </span>
             </button>
 
-            <button className="group/btn w-full sm:w-auto px-10 py-5 bg-white hover:bg-gradient-to-r hover:from-slate-50 hover:to-white text-slate-800 border-2 border-slate-200 rounded-3xl font-extrabold text-base transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-orange-300 hover:shadow-orange-400/20 active:translate-y-0 active:scale-95 overflow-hidden relative">
+            <button 
+              onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
+              className="group/btn w-full sm:w-auto px-10 py-5 bg-white hover:bg-gradient-to-r hover:from-slate-50 hover:to-white text-slate-800 border-2 border-slate-200 rounded-3xl font-extrabold text-base transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-orange-300 hover:shadow-orange-400/20 active:translate-y-0 active:scale-95 overflow-hidden relative inline-flex items-center justify-center"
+            >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-orange-200/50 to-transparent translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-1000"></div>
               <span className="relative flex items-center justify-center gap-4">
                 <span>Explore Features</span>
@@ -120,7 +123,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookDemo }) => {
           <div className="flex flex-wrap justify-center gap-8 pt-6 text-sm text-slate-500 font-medium">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-              <span>Trusted by 500+ Institutions</span>
+              <span>Next-Gen Cloud ERP Solutions</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
@@ -188,7 +191,10 @@ export const Hero: React.FC<HeroProps> = ({ onBookDemo }) => {
 
           {/* Scroll Indicator */}
           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 text-center">
-            <button className="group flex flex-col items-center gap-2 text-slate-400 hover:text-slate-600 transition-colors">
+            <button 
+              onClick={() => document.getElementById('solutions')?.scrollIntoView({ behavior: 'smooth' })}
+              className="group flex flex-col items-center gap-2 text-slate-400 hover:text-slate-600 transition-colors"
+            >
               <span className="text-xs font-medium uppercase tracking-wider">Discover More</span>
               <ChevronDown className="w-6 h-6 group-hover:translate-y-1 transition-transform duration-500" />
               <div className="w-16 h-1 bg-gradient-to-r from-transparent via-slate-300 to-transparent rounded-full"></div>

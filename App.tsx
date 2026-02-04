@@ -96,16 +96,16 @@ const App: React.FC = () => {
         <Stats />
 
         {/* Industry Focus - Education & Enterprise */}
-        <IndustryFocus />
+        <IndustryFocus onBookDemo={() => setIsDemoModalOpen(true)} />
 
         {/* Academic Features Showcase */}
-        <AcademicFeatures />
+        <AcademicFeatures onBookDemo={() => setIsDemoModalOpen(true)} />
 
         {/* Core Modules Grid */}
         <ModuleGrid />
 
         {/* AI Capabilities */}
-        <AIInsights />
+        <AIInsights onBookDemo={() => setIsDemoModalOpen(true)} />
 
         {/* Enhanced Mission Section */}
         <section className="py-24 bg-gradient-to-br from-slate-50 via-white to-orange-50 relative overflow-hidden">
@@ -245,7 +245,7 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        <Features />
+        <Features onBookDemo={() => setIsDemoModalOpen(true)} />
 
 
         {/* Enhanced Final CTA */}
@@ -260,7 +260,7 @@ const App: React.FC = () => {
               </h2>
             </div>
             <p className="text-lg md:text-xl text-slate-600 mb-12 max-w-3xl mx-auto font-medium leading-relaxed">
-              Smart solutions for growing institutions. Simple setup, powerful results, Indian pricing. Join 500+ institutions transforming their operations today.
+              Smart solutions for growing institutions. Simple setup, powerful results, Indian pricing. Start transforming your operations today.
             </p>
 
             {/* Enhanced CTA Buttons */}
@@ -288,7 +288,7 @@ const App: React.FC = () => {
             <div className="mt-12 flex flex-wrap justify-center gap-8 text-sm text-slate-500 font-medium">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                <span>Trusted by 500+ Institutions</span>
+                <span>Modern Cloud Infrastructure</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
@@ -311,7 +311,7 @@ const App: React.FC = () => {
         </section>
       </main>
 
-      <Footer />
+      <Footer onBookDemo={() => setIsDemoModalOpen(true)} />
 
       {isDemoModalOpen && (
         <BookDemoModal onClose={() => setIsDemoModalOpen(false)} />

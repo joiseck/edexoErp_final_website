@@ -2,7 +2,11 @@
 import React, { useState } from 'react';
 import { GraduationCap, Briefcase, CheckCircle2, Zap, ArrowRight, BookOpen, Users, ClipboardCheck, MessageSquare } from 'lucide-react';
 
-export const IndustryFocus: React.FC = () => {
+interface IndustryFocusProps {
+  onBookDemo: () => void;
+}
+
+export const IndustryFocus: React.FC<IndustryFocusProps> = ({ onBookDemo }) => {
   const [tab, setTab] = useState<'edu' | 'ent'>('edu');
 
   return (
@@ -76,9 +80,12 @@ export const IndustryFocus: React.FC = () => {
                 ))}
               </div>
               <div className="flex flex-wrap gap-4">
-                <a href="#academic-features" className="px-8 py-4 bg-blue-900 text-white rounded-2xl font-bold shadow-xl shadow-blue-900/30 hover:bg-blue-950 transition-colors flex items-center gap-2 inline-block">
+                <button 
+                  onClick={() => document.getElementById('academic-features')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="px-8 py-4 bg-blue-900 text-white rounded-2xl font-bold shadow-xl shadow-blue-900/30 hover:bg-blue-950 transition-colors flex items-center gap-2"
+                >
                   Explore Academic Features <ArrowRight className="w-5 h-5" />
-                </a>
+                </button>
               </div>
             </div>
 
@@ -110,7 +117,10 @@ export const IndustryFocus: React.FC = () => {
                   </div>
                 ))}
               </div>
-              <button className="px-8 py-4 bg-orange-500 text-white rounded-2xl font-bold shadow-xl shadow-orange-500/30 hover:bg-orange-600 transition-colors flex items-center gap-2">
+              <button 
+                onClick={onBookDemo}
+                className="px-8 py-4 bg-orange-500 text-white rounded-2xl font-bold shadow-xl shadow-orange-500/30 hover:bg-orange-600 transition-colors flex items-center gap-2"
+              >
                 Request Business Demo <ArrowRight className="w-5 h-5" />
               </button>
             </div>

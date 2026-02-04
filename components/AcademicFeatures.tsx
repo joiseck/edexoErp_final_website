@@ -1,7 +1,11 @@
 import React from 'react';
 import { GraduationCap, Users, BookOpen, Calendar, MessageSquare, Shield, BarChart3, Settings, Zap } from 'lucide-react';
 
-export const AcademicFeatures: React.FC = () => {
+interface AcademicFeaturesProps {
+  onBookDemo: () => void;
+}
+
+export const AcademicFeatures: React.FC<AcademicFeaturesProps> = ({ onBookDemo }) => {
   const features = [
     {
       icon: GraduationCap,
@@ -127,18 +131,24 @@ export const AcademicFeatures: React.FC = () => {
               </div>
 
               <div className="flex flex-wrap gap-4">
-                <button className="px-8 py-4 bg-white text-blue-950 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 active:scale-95">
+                <button 
+                  onClick={onBookDemo}
+                  className="px-8 py-4 bg-white text-blue-950 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 active:scale-95"
+                >
                   Schedule LMS Demo
                 </button>
-                <button className="px-8 py-4 bg-transparent border-2 border-white/30 text-white rounded-xl font-bold hover:bg-white hover:text-blue-950 transition-all">
+                <a 
+                  href="#features"
+                  className="px-8 py-4 bg-transparent border-2 border-white/30 text-white rounded-xl font-bold hover:bg-white hover:text-blue-950 transition-all flex items-center"
+                >
                   View Features
-                </button>
+                </a>
               </div>
             </div>
 
             <div className="relative group">
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-[3rem] p-4 shadow-2xl">
-                <div className="grid grid-cols-2 gap-4">
+        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-[3rem] p-4 shadow-2xl">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="bg-white/20 rounded-xl p-6">
                     <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4">
                       <BarChart3 className="w-6 h-6 text-white" />
@@ -179,13 +189,19 @@ export const AcademicFeatures: React.FC = () => {
             Ready to <span className="text-gradient">Transform</span> Your Institution?
           </h3>
           <p className="text-lg text-slate-600 font-medium mb-12 max-w-2xl mx-auto">
-            Join hundreds of educational institutions that have already embraced the future of learning management.
+            Experience the next generation of educational management tools built for your growth.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <button className="px-12 py-5 bg-blue-900 text-white rounded-2xl font-bold text-lg shadow-xl shadow-blue-900/30 hover:bg-blue-950 transition-all hover:-translate-y-1 active:scale-95">
+            <button 
+              onClick={onBookDemo}
+              className="px-12 py-5 bg-blue-900 text-white rounded-2xl font-bold text-lg shadow-xl shadow-blue-900/30 hover:bg-blue-950 transition-all hover:-translate-y-1 active:scale-95"
+            >
               Get Started Today
             </button>
-            <button className="px-12 py-5 bg-transparent border-2 border-blue-900 text-blue-900 rounded-2xl font-bold text-lg hover:bg-blue-900 hover:text-white transition-all">
+            <button 
+              onClick={onBookDemo}
+              className="px-12 py-5 bg-transparent border-2 border-blue-900 text-blue-900 rounded-2xl font-bold text-lg hover:bg-blue-900 hover:text-white transition-all"
+            >
               Request Custom Demo
             </button>
           </div>

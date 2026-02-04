@@ -3,10 +3,10 @@ import React from 'react';
 
 export const Stats: React.FC = () => {
   const stats = [
-    { label: 'Pilot Partners', value: '15+', sub: 'Early Adopters' },
-    { label: 'Platform Uptime', value: '99.5%', sub: '24/7 Monitoring' },
-    { label: 'Secure Payments', value: '₹50L+', sub: 'Processed Annually' },
-    { label: 'Active Users', value: '5k+', sub: 'Across 3 States' },
+    { label: 'Modern UI/UX', value: '100%', sub: 'Intuitive Design' },
+    { label: 'Platform Uptime', value: '99.9%', sub: 'Cloud Hosted' },
+    { label: 'Data Security', value: 'AES-256', sub: 'Enterprise Grade' },
+    { label: 'Support', value: '24/7', sub: 'Indian Team' },
   ];
 
   return (

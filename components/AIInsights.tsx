@@ -2,7 +2,11 @@
 import React from 'react';
 import { Sparkles, MessageSquare, Zap, Target, Search } from 'lucide-react';
 
-export const AIInsights: React.FC = () => {
+interface AIInsightsProps {
+  onBookDemo: () => void;
+}
+
+export const AIInsights: React.FC<AIInsightsProps> = ({ onBookDemo }) => {
   return (
     <section className="py-24 bg-slate-950 relative overflow-hidden" id="ai">
       {/* Dynamic background lights */}
@@ -76,7 +80,10 @@ export const AIInsights: React.FC = () => {
                   <div className="flex-grow bg-white/5 rounded-2xl border border-white/10 px-5 py-3 text-slate-500 text-sm italic flex items-center gap-2">
                     <Search className="w-4 h-4" /> Ask a business question...
                   </div>
-                  <button className="bg-orange-500 p-3 rounded-2xl shadow-lg shadow-orange-500/20">
+                  <button 
+                    onClick={onBookDemo}
+                    className="bg-orange-500 p-3 rounded-2xl shadow-lg shadow-orange-500/20"
+                  >
                     <Target className="w-5 h-5 text-white" />
                   </button>
                 </div>

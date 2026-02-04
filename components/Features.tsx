@@ -2,7 +2,11 @@
 import React, { useState, useEffect } from 'react';
 import { Smartphone, ShieldCheck, Zap, Globe, MessageCircle, CreditCard, Users, Calendar, TrendingUp, Settings, Database, BarChart3 } from 'lucide-react';
 
-export const Features: React.FC = () => {
+interface FeaturesProps {
+  onBookDemo: () => void;
+}
+
+export const Features: React.FC<FeaturesProps> = ({ onBookDemo }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -33,7 +37,7 @@ export const Features: React.FC = () => {
       gradient: 'bg-gradient-to-br from-green-50 to-green-50/50',
       border: 'border-green-200',
       stats: [
-        { label: 'Messages Sent', value: '10M+', icon: <Users className="w-4 h-4" /> },
+        { label: 'Integration', value: 'API Ready', icon: <Users className="w-4 h-4" /> },
         { label: 'Response Rate', value: '95%', icon: <TrendingUp className="w-4 h-4" /> }
       ]
     },
@@ -105,7 +109,7 @@ export const Features: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-slate-50 via-white to-orange-50 relative overflow-hidden" data-features-section>
+    <section className="py-24 bg-gradient-to-br from-slate-50 via-white to-orange-50 relative overflow-hidden" data-features-section id="features">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl -z-10"></div>
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-400/10 rounded-full blur-3xl -z-10"></div>
@@ -176,7 +180,10 @@ export const Features: React.FC = () => {
                     <div className="w-3 h-3 bg-orange-400 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
                   </div>
 
-                  <button className="group/btn flex items-center gap-2 text-sm font-bold text-slate-600 hover:text-orange-500 transition-colors">
+                  <button 
+                    onClick={onBookDemo}
+                    className="group/btn flex items-center gap-2 text-sm font-bold text-slate-600 hover:text-orange-500 transition-colors"
+                  >
                     Learn More
                     <div className="w-4 h-4 bg-gradient-to-r from-blue-400 to-orange-400 rounded-full flex items-center justify-center text-white text-xs group-hover/btn:scale-110 transition-transform duration-300">
                       →
