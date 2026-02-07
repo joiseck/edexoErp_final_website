@@ -168,6 +168,95 @@
             }
         }
         
+        /* Mobile-First Responsive Improvements */
+        @media (max-width: 640px) {
+            /* Prevent horizontal scrolling */
+            html {
+                overflow-x: hidden;
+            }
+            
+            /* Optimize touch targets for mobile */
+            button, a {
+                min-height: 44px;
+                min-width: 44px;
+            }
+            
+            /* Reduce animations on mobile for performance */
+            .animate-float, .animate-float-slow {
+                animation-duration: 8s;
+            }
+            
+            /* Optimize images for mobile */
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+            
+            /* Prevent text overflow */
+            h1, h2, h3, h4, h5, h6 {
+                overflow-wrap: break-word;
+                word-wrap: break-word;
+            }
+            
+            /* Optimize forms for mobile */
+            input, select, textarea {
+                font-size: 16px; /* Prevents iOS zoom */
+                -webkit-appearance: none;
+            }
+            
+            /* Better spacing for mobile */
+            .container, .max-w-7xl {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+        
+        /* Tablet optimizations */
+        @media (min-width: 641px) and (max-width: 1024px) {
+            /* Adjust grid layouts for tablets */
+            .grid-cols-3 {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            
+            /* Optimize spacing */
+            .p-8 {
+                padding: 1.5rem;
+            }
+        }
+        
+        /* Landscape mode optimizations */
+        @media (orientation: landscape) and (max-height: 500px) {
+            /* Reduce vertical spacing in landscape */
+            .py-24 {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+            
+            /* Optimize hero section */
+            .hero-section {
+                padding-top: 4rem;
+            }
+        }
+        
+        /* Accessibility improvements */
+        @media (prefers-reduced-motion: reduce) {
+            .animate-pulse,
+            .animate-float,
+            .animate-float-slow,
+            .animate-in,
+            .animate-out {
+                animation: none;
+                transition: none;
+            }
+        }
+        
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            .glass {
+                border: 2px solid rgba(255, 255, 255, 0.5);
+            }
+        }
+        
         /* Enhanced Accessibility */
         .sr-only {
             position: absolute;
