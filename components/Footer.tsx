@@ -57,31 +57,13 @@ export const Footer: React.FC<FooterProps> = ({ onBookDemo }) => {
         { name: 'Growth CRM', id: 'modules' },
         { name: 'Human Capital HRMS', id: 'modules' }
       ]
-    },
-    {
-      title: 'Resources', links: [
-        { name: 'Help Documentation', action: onBookDemo },
-        { name: 'API References', action: onBookDemo },
-        { name: 'Customer Success Stories', id: 'solutions' },
-        { name: 'Security & Trust', id: 'features' },
-        { name: 'Pricing Plans', action: onBookDemo }
-      ]
-    },
-    {
-      title: 'Support', links: [
-        { name: '24/7 Support', action: onBookDemo },
-        { name: 'Training Programs', action: onBookDemo },
-        { name: 'Implementation', action: onBookDemo },
-        { name: 'Consultation', action: onBookDemo },
-        { name: 'Community Forum', action: onBookDemo }
-      ]
     }
   ];
 
   return (
     <footer className="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 text-slate-400 pt-12 sm:pt-16 pb-10 sm:pb-12 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10 sm:mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-10 sm:mb-12">
           {/* Brand Section */}
           <ScrollReveal variant="fade-up" delay={0} width="100%">
             <div className="space-y-4 sm:space-y-6">
@@ -105,35 +87,33 @@ export const Footer: React.FC<FooterProps> = ({ onBookDemo }) => {
             </div>
           </ScrollReveal>
 
-          {/* Quick Links */}
-          {quickLinks.map((section, idx) => (
-             <ScrollReveal variant="fade-up" delay={0.1 * (idx + 1)} width="100%">
-              <div className="space-y-3 sm:space-y-4">
-                <h4 className="text-white font-bold text-sm sm:text-base border-b border-slate-800 pb-2">{section.title}</h4>
-                <ul className="space-y-2">
-                  {section.links.map((link: any, lIdx) => (
-                    <li key={lIdx}>
-                      <button
-                        onClick={() => {
-                          if (link.id) {
-                            document.getElementById(link.id)?.scrollIntoView({ behavior: 'smooth' });
-                          } else if (link.action) {
-                            link.action();
-                          }
-                        }}
-                        className="text-xs sm:text-sm hover:text-orange-400 transition-colors text-left"
-                      >
-                        {link.name}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </ScrollReveal>
-          ))}
+          {/* Core Platforms */}
+          <ScrollReveal variant="fade-up" delay={0.1} width="100%">
+            <div className="space-y-3 sm:space-y-4">
+              <h4 className="text-white font-bold text-sm sm:text-base border-b border-slate-800 pb-2">Core Platforms</h4>
+              <ul className="space-y-2">
+                {quickLinks[0].links.map((link: any, lIdx) => (
+                  <li key={lIdx}>
+                    <button
+                      onClick={() => {
+                        if (link.id) {
+                          document.getElementById(link.id)?.scrollIntoView({ behavior: 'smooth' });
+                        } else if (link.action) {
+                          link.action();
+                        }
+                      }}
+                      className="text-xs sm:text-sm hover:text-orange-400 transition-colors text-left"
+                    >
+                      {link.name}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </ScrollReveal>
 
           {/* Contact */}
-          <ScrollReveal variant="fade-up" delay={0.4} width="100%">
+          <ScrollReveal variant="fade-up" delay={0.2} width="100%">
             <div className="space-y-3 sm:space-y-4">
               <h4 className="text-white font-bold text-sm sm:text-base border-b border-slate-800 pb-2">Contact</h4>
               <div className="space-y-2 sm:space-y-3">

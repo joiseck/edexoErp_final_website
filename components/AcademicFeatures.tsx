@@ -87,9 +87,6 @@ export const AcademicFeatures: React.FC<AcademicFeaturesProps> = ({ onBookDemo }
                     </div>
                   ))}
                 </div>
-                <div className="mt-4 sm:mt-6 flex items-center gap-1.5 sm:gap-2 text-orange-500 font-bold text-xs sm:text-sm">
-                  Learn More <Zap className="w-3 h-3 sm:w-4 sm:h-4" />
-                </div>
               </div>
             </ScrollReveal>
           ))}
