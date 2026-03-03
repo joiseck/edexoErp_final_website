@@ -94,7 +94,7 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({ onClose }) => {
 
             <div className="space-y-1.5">
               <label className="text-xs sm:text-sm font-bold text-slate-700">Phone Number <span className="text-slate-400 font-normal">(Optional)</span></label>
-              <input type="tel" name="phone" className="w-full p-2.5 sm:p-3 bg-slate-50 border border-slate-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all text-sm sm:text-base" placeholder="+1 (555) 000-0000" />
+              <input type="tel" name="phone" className="w-full p-2.5 sm:p-3 bg-slate-50 border border-slate-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all text-sm sm:text-base" placeholder="+91 98765 43210" />
             </div>
             
             <div className="space-y-1.5">
