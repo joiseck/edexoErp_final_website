@@ -25,26 +25,26 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({ onClose }) => {
              <p className="text-xs sm:text-sm text-slate-500 font-medium">See how Edexo can transform your operations in 30 minutes.</p>
            </div>
            
-           <form className="space-y-3 sm:space-y-4" onSubmit={(e) => { e.preventDefault(); alert("Thanks! We'll contact you soon."); onClose(); }}>
+           <form action="https://formspree.io/f/mreanbay" method="POST" className="space-y-3 sm:space-y-4" onSubmit={(e) => { e.preventDefault(); const form = e.currentTarget; fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } }).then(() => { alert("Thanks! We'll contact you soon."); onClose(); }).catch(() => { alert("Something went wrong. Please try again."); }); }}>
              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                <div className="space-y-1.5">
                  <label className="text-xs sm:text-sm font-bold text-slate-700">Full Name</label>
-                 <input type="text" className="w-full p-2.5 sm:p-3 bg-slate-50 border border-slate-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all text-sm sm:text-base" placeholder="John Doe" required />
+                 <input type="text" name="fullName" className="w-full p-2.5 sm:p-3 bg-slate-50 border border-slate-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all text-sm sm:text-base" placeholder="John Doe" required />
                </div>
                <div className="space-y-1.5">
                  <label className="text-xs sm:text-sm font-bold text-slate-700">Work Email</label>
-                 <input type="email" className="w-full p-2.5 sm:p-3 bg-slate-50 border border-slate-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all text-sm sm:text-base" placeholder="john@academy.com" required />
+                 <input type="email" name="email" className="w-full p-2.5 sm:p-3 bg-slate-50 border border-slate-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all text-sm sm:text-base" placeholder="john@academy.com" required />
                </div>
              </div>
              
              <div className="space-y-1.5">
                <label className="text-xs sm:text-sm font-bold text-slate-700">Institution / Business Name</label>
-               <input type="text" className="w-full p-2.5 sm:p-3 bg-slate-50 border border-slate-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all text-sm sm:text-base" placeholder="Apex Academy Inc." required />
+               <input type="text" name="institution" className="w-full p-2.5 sm:p-3 bg-slate-50 border border-slate-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all text-sm sm:text-base" placeholder="Apex Academy Inc." required />
              </div>
              
              <div className="space-y-1.5">
                <label className="text-xs sm:text-sm font-bold text-slate-700">Primary Module Interest</label>
-               <select className="w-full p-2.5 sm:p-3 bg-slate-50 border border-slate-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all appearance-none cursor-pointer text-sm sm:text-base">
+               <select name="module" className="w-full p-2.5 sm:p-3 bg-slate-50 border border-slate-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all appearance-none cursor-pointer text-sm sm:text-base">
                  <option>All-in-One ERP</option>
                  <option>Education LMS & Mgmt</option>
                  <option>HRMS & Payroll</option>
