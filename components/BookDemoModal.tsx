@@ -35,7 +35,7 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({ onClose }) => {
     return (
       <div className="fixed inset-0 z-[9999] flex items-center justify-center p-2 sm:p-4">
         <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onClick={onClose}></div>
-        <div className="relative bg-white rounded-2xl sm:rounded-3xl w-full max-w-xl overflow-hidden shadow-2xl animate-in zoom-in-95 duration-200 p-6 sm:p-8 md:p-12">
+        <div className="relative bg-white rounded-2xl sm:rounded-3xl w-full max-w-xl max-h-[90vh] overflow-hidden shadow-2xl animate-in zoom-in-95 duration-200 p-6 sm:p-8 md:p-12">
           <button 
             onClick={onClose}
             className="absolute top-3 right-3 p-2 bg-slate-100 hover:bg-slate-200 rounded-full transition-colors text-slate-600"
@@ -44,7 +44,7 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({ onClose }) => {
             <X className="w-5 h-5" />
           </button>
           
-          <div className="text-center py-8">
+          <div className="overflow-y-auto max-h-[80vh]">
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <CheckCircle className="w-8 h-8 text-green-600" />
             </div>
@@ -65,16 +65,16 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({ onClose }) => {
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-2 sm:p-4">
       <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onClick={onClose}></div>
-      <div className="relative bg-white rounded-2xl sm:rounded-3xl w-full max-w-xl overflow-hidden shadow-2xl animate-in zoom-in-95 duration-200">
+      <div className="relative bg-white rounded-2xl sm:rounded-3xl w-full max-w-xl max-h-[90vh] overflow-hidden shadow-2xl animate-in zoom-in-95 duration-200">
         <button 
           onClick={onClose}
-          className="absolute top-3 right-3 p-2 bg-slate-100 hover:bg-slate-200 rounded-full transition-colors text-slate-600"
+          className="absolute top-3 right-3 p-2 bg-slate-100 hover:bg-slate-200 rounded-full transition-colors text-slate-600 z-10"
           aria-label="Close modal"
         >
           <X className="w-5 h-5" />
         </button>
         
-        <div className="p-6 sm:p-8 md:p-12">
+        <div className="p-6 sm:p-8 md:p-12 overflow-y-auto max-h-[90vh]">
           <div className="text-center mb-6 sm:mb-8 md:mb-10">
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-900 mb-2">Book Your Free Demo</h2>
             <p className="text-xs sm:text-sm text-slate-500 font-medium">See how Edexo can transform your operations in 30 minutes.</p>
